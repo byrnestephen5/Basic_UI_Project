@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+    
+  <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+ 
+    
+    <script src="jquery/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+ 
+
+    
+    
+<script>
+$(document).ready(function(){
+   
+        $("#errorparentname").hide();
+        $("#errorchildsname").hide();
+        $("#erroremail").hide();
+        $("#errortextarea").hide();
+        $("#sucessful").hide();
+        
+});
+</script> 
+
+    <!-- Validation Scripts   -->
+        <script>    
+        function validateform(){  
+        var parentname=document.myform2.parentname.value; 
+        var childname =document.myform2.childname.value;
+		var message1 =document.myform2.message1.value;
+        var email =document.myform2.email.value;
+         
+
+        if (parentname==null || parentname=="" || parentname.length < 3){
+            $("#errorparentname").show();
+			document.getElementById("errorparentname").innerHTML = "Name must be at least 3 characters long!"
+          return false;  
+        }
+
+        if (childname==null || childname=="" || childname.length < 3){
+                        $("#errorchildsname").show();
+			document.getElementById("errorchildsname").innerHTML = "Name must be at least 3 characters long!"
+          return false;  
+        }
+
+        if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) || email.length < 10){
+            $("#erroremail").show();
+		  document.getElementById("erroremail").innerHTML = "You have entered an invalid email address!"
+            return false;       
+        }  
+
+            if (message1.length < 25){  
+            $("#errortextarea").show();    
+		   document.getElementById("errortextarea").innerHTML = "Message must be at least 25 characters long!"
+          return false;  
+        }
+    
+          <!----------return true; ---------->
+       
+         else {
+             alert("Thank you for your query. We will contact you shortly.")
+         }   
+             
+        }  
+            
+       </script>     
+           
+
+<style>
+
+.error {
+
+  color: #ff0000;
+
+}    
+
+</style>    
+
+</head>
+
+<body> 
+<div class="container-fluid">
+<div class="header">
+
+     <h1><strong>Bright Sparks Preschool</strong></h1> 
+
+     <h2>"We grow together"</h2>    
+
+</div>
+</div>
+<div class="container-fluid">   
+    
+ <div class="row">   
+
+<div class="col-2 menu">
+
+ <ul><h3>
+
+    <li><a href="About.html">Home</li></a>
+
+    <li><a href="Calendar.html">Calendar</li></a>
+
+    <li><a href="Contact.html">Contact</li></a>
+
+    <li><a href="TeachersCorner.html">Teachers Corner</li></a>
+
+    <li><a href="KiddiesCorner.html">Kiddies Corner</li></a> </h3> 
+
+    </ul>
+
+</div>
+
+<div class="col-5">     
+
+<h1><strong>Contact</strong></h1>
+
+<pre>
+<h3>
+Bright Sparks Preschool 
+
+25-29 Mervue Business Park, 
+
+Mervue, 
+
+Co. Galway, 
+
+Ireland.
+
+Phone: +353 1 656 7700
+
+Email: galwaybrightsparks@gmail.com</h3> 
+
+</pre>
+
+<br>
+
+<br>
+
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4770.42000278602!2d-9.027589792126463!3d53.28577313170198!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96c7fcfad4d3%3A0x21a8fa9d173c913c!2sMervue+Business+Park!5e0!3m2!1sen!2sie!4v1498419628624" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>   
+
+</div>
+
+<div class="col-3" >    
+
+        <form name="myform2" method="" action="Contact.html" onsubmit="return validateform();" >  
+        <fieldset>
+        <legend><h3><strong>Personal information:</strong></h3></legend>    
+
+        <h4><strong>Parents Name:</strong></h4><br>
+        <div class="form-group">    
+        <input type="text" name="parentname" placeholder="Parents Name" class="form-control"><br/>
+		<div id = "errorparentname"  class="alert alert-danger"></div>
+        </div>    
+        <h4><strong>Childs Name:</strong></h4><br> 
+        <div class="form-group">     
+        <input type="text" name="childname" placeholder="Childs Name" class="form-control"><br/>
+			<div id = "errorchildsname" class ="alert alert-danger"></div>
+        </div>    
+        <h4><strong>Email:</strong></h4><br> 
+         <div class="form-group">    
+        <input type="text" name="email" placeholder="Email" class="form-control"><br/>  
+			<div id = "erroremail" class ="alert alert-danger" ></div>
+        </div>      
+        <br>
+        <h4><strong>Area of Enquiry:</strong></h4><br>      
+        <br> 
+        <div class="form-group">     
+        <textarea rows="15" cols="60" name="message1" class="form-control">Enter message here.</textarea>    
+        <br> 
+           <div id = "errortextarea" class ="alert alert-danger"></div>		
+            </div>
+        <input type="submit" value="Enter" class="btn btn-primary"> 
+            <div id = "sucessful" class="alert alert-info"></div>
+            
+
+    </fieldset>
+
+        </form> 
+      </div>  
+
+      </div>
+
+      </div>
+
+<br>
+
+<br>
+
+<br>
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-12">
+
+<div class="footer">
+
+<p><a href="About.html">HOME</a>     <a href="Calendar.html">CALENDAR</a>      <a href="Contact.html">CONTACT</a>     <a href="TeachersCorner.html">TEACHERS CORNER</a>     <a href="KiddiesCorner.html">KIDS CORNER</a> </p>  
+
+<img src="images/facebook_badge.png" alt="Facebook image" width="50" height="50">          
+
+<p>Copyright &copy 2015 Bright Sparks Pre-School, 25-29 Mervue Business Park,Mervue,Galway. All Rights Reserved. Website by Stephen Byrne Designs.</p> 
+
+</footer>
+
+</div>    
+
+</div> 
+
+</div>
+</div>
+
+</body>
+
+</html>
